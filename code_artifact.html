@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Село Манас & Авиагородок — Сердце Чуйской Долины</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        skyBrand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        emeraldAccent: '#10b981',
+                        goldAccent: '#f59e0b',
+                        darkBg: '#0b1329',
+                        cardBg: 'rgba(15, 23, 42, 0.75)',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Unbounded', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(11, 19, 41, 0.7), rgba(11, 19, 41, 0.95)), url('https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=2000&q=80')",
+                        'avia-pattern': "linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar and glassmorphism styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1329;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 4px;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .radar-sweep {
+            animation: radarSweep 4s linear infinite;
+        }
+        @keyframes radarSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .pulse-dot {
+            animation: pulseAnimation 2s infinite;
+        }
+        @keyframes pulseAnimation {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-skyBrand-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-slate-800/80" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-skyBrand-600 to-emeraldAccent flex items-center justify-center text-white shadow-lg shadow-skyBrand-600/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-plane-departure text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg text-white tracking-wider block">МАНАС</span>
+                    <span class="text-xs text-skyBrand-400 font-medium tracking-widest uppercase block">& Авиагородок</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-skyBrand-400 transition-colors">О селе</a>
+                <a href="#avia" class="hover:text-skyBrand-400 transition-colors flex items-center gap-1.5">
+                    <span>Авиагородок</span>
+                    <span class="bg-skyBrand-500/20 text-skyBrand-400 text-[10px] px-2 py-0.5 rounded-full font-bold border border-skyBrand-500/30">ТОП</span>
+                </a>
+                <a href="#infrastructure" class="hover:text-skyBrand-400 transition-colors">Инфраструктура</a>
+                <a href="#interactive" class="hover:text-skyBrand-400 transition-colors">Карта и Галерея</a>
+                <a href="#live-data" class="hover:text-skyBrand-400 transition-colors">Табло & Погода</a>
+                <a href="#community" class="hover:text-skyBrand-400 transition-colors">Сообщество</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-skyBrand-600 to-skyBrand-500 text-white font-semibold text-sm shadow-md shadow-skyBrand-600/25 hover:shadow-skyBrand-600/40 hover:scale-105 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Обращения</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Открыть меню">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-200 hover:text-skyBrand-400 font-medium">О селе</a>
+            <a href="#avia" class="block py-2 text-skyBrand-400 font-semibold">Авиагородок</a>
+            <a href="#infrastructure" class="block py-2 text-slate-200 hover:text-skyBrand-400 font-medium">Инфраструктура</a>
+            <a href="#interactive" class="block py-2 text-slate-200 hover:text-skyBrand-400 font-medium">Карта и Галерея</a>
+            <a href="#live-data" class="block py-2 text-slate-200 hover:text-skyBrand-400 font-medium">Табло и Погода</a>
+            <a href="#community" class="block py-2 text-slate-200 hover:text-skyBrand-400 font-medium">Новости</a>
+            <a href="#contact" class="block w-full text-center mt-2 px-5 py-2.5 rounded-xl bg-skyBrand-600 text-white font-semibold">Связаться</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center bg-hero-pattern bg-cover bg-center bg-no-repeat overflow-hidden">
+        <!-- Floating Ambient Elements -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-skyBrand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-emeraldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-skyBrand-400/30 text-skyBrand-400 text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emeraldAccent pulse-dot"></span>
+                        <span>Чуйская область • Сокулукский район</span>
+                    </div>
+
+                    <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Село <span class="text-gradient">Манас</span> и уютный <span class="text-gradient-gold">Авиагородок</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        Уникальный уголок Чуйской долины, сочетающий размеренную жизнь, природную свежесть, богатую историю авиации и близость к главным воздушным воротам Кыргызстана.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#avia" class="px-7 py-4 rounded-xl bg-gradient-to-r from-skyBrand-600 to-skyBrand-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-skyBrand-600/30 hover:scale-105 hover:shadow-skyBrand-500/50 transition-all flex items-center gap-3">
+                            <i class="fa-solid fa-plane text-lg"></i>
+                            <span>Узнать про Авиагородок</span>
+                        </a>
+                        <a href="#interactive" class="px-7 py-4 rounded-xl glass-card text-white font-semibold text-sm sm:text-base border border-slate-700 hover:border-skyBrand-400 hover:bg-slate-800/60 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot text-skyBrand-400"></i>
+                            <span>Интерактивная карта</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Badges -->
+                    <div class="pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="glass-card p-4 rounded-xl text-center">
+                            <div class="font-display font-bold text-2xl text-skyBrand-400 counter" data-target="25">0</div>
+                            <div class="text-xs text-slate-400 font-medium">минут до Бишкека</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center">
+                            <div class="font-display font-bold text-2xl text-emeraldAccent counter" data-target="5">0</div>
+                            <div class="text-xs text-slate-400 font-medium">мин до Аэропорта</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center">
+                            <div class="font-display font-bold text-2xl text-goldAccent counter" data-target="12000">0</div>
+                            <div class="text-xs text-slate-400 font-medium">+ жителей района</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center">
+                            <div class="font-display font-bold text-2xl text-skyBrand-400">750m</div>
+                            <div class="text-xs text-slate-400 font-medium">Высота над уровнем моря</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Card Widget -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden border border-slate-700/60 shadow-2xl">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-skyBrand-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                        
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-skyBrand-500/20 flex items-center justify-center text-skyBrand-400">
+                                    <i class="fa-solid fa-plane-arrival"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Международный Аэропорт Манас</h3>
+                                    <p class="text-xs text-slate-400">Код: FRU / UCFM • По соседству</p>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold">АКТИВЕН</span>
+                        </div>
+
+                        <!-- Mini Airport Status -->
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-plane-departure text-skyBrand-400 text-sm"></i>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Рейс Y7-701 • Москва</p>
+                                        <p class="text-sm font-semibold text-white">Вылет по расписанию</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-emeraldAccent font-mono">14:25</span>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-plane-arrival text-emeraldAccent text-sm"></i>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Рейс TK-344 • Стамбул</p>
+                                        <p class="text-sm font-semibold text-white">Прибыл на рулежку</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-skyBrand-400 font-mono">14:10</span>
+                            </div>
+
+                            <!-- Live Weather Mini Card -->
+                            <div class="p-4 rounded-xl bg-gradient-to-r from-slate-900 via-skyBrand-950 to-slate-900 border border-skyBrand-800/40 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-slate-400">Погода в Манасе сейчас</p>
+                                    <p class="text-2xl font-bold text-white mt-1">+22°C <span class="text-xs font-normal text-slate-300">Ясно</span></p>
+                                </div>
+                                <div class="text-right">
+                                    <i class="fa-solid fa-sun text-amber-400 text-3xl mb-1"></i>
+                                    <p class="text-[11px] text-slate-400">Ветер: 3 м/с СЗ</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 text-center">
+                            <p class="text-xs text-slate-400">
+                                <i class="fa-solid fa-location-dot text-red-400 mr-1"></i>
+                                Координаты: <span class="font-mono text-slate-200">43°03′20″ с. ш. 74°28′30″ в. д.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-slate-900/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-skyBrand-400 tracking-widest uppercase mb-2">ОБЗОР ПОСЕЛЕНИЯ</h2>
+                <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Добро пожаловать в село Манас</h3>
+                <div class="w-20 h-1 bg-gradient-to-r from-skyBrand-500 to-emeraldAccent mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-300 text-base leading-relaxed">
+                    Село Манас расположено в Сокулукском районе Чуйской области Кыргызской Республики. Это стратегически важное и одновременно спокойное место, сочетающее в себе развитую транспортную логистику и чистый загородный воздух.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative">
+                    <div class="w-14 h-14 rounded-2xl bg-skyBrand-500/10 border border-skyBrand-500/30 flex items-center justify-center text-skyBrand-400 text-2xl mb-6">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Чистая экология и зелень</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Благодаря близости к предгорьям Тянь-Шаня и отсутствию тяжелой промышленности село славится свежим воздухом, обильной зеленью и тихими улицами.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative">
+                    <div class="w-14 h-14 rounded-2xl bg-emeraldAccent/10 border border-emeraldAccent/30 flex items-center justify-center text-emeraldAccent text-2xl mb-6">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Отличная транспортность</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Прямая трасса соединяет село Манас со столицей Кыргызстана — Бишкеком. Дорога на автомобиле или общественном транспорте занимает всего 25-30 минут.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Дружное сообщество</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Здесь сформировалось уникальное мультикультурное сообщество жителей, ценителей семейного уюта, а также семей авиаторов нескольких поколений.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avia-Gorodok Spotlight Section -->
+    <section id="avia" class="py-24 relative bg-avia-pattern bg-cover bg-center bg-fixed">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-skyBrand-500/20 text-skyBrand-300 text-xs font-bold uppercase tracking-wider border border-skyBrand-400/30">
+                        <i class="fa-solid fa-jet-fighter text-xs"></i> Особый район
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+                        Сердце авиации — <span class="text-gradient-gold">Авиагородок</span>
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Авиагородок — это легендарный микрорайон села Манас. Первоначально созданный для проживания экипажей гражданской авиации, диспетчеров, инженеров и работников главного аэропорта страны, он сохранил свою особую атмосферу гордости, порядка и уюта.
+                    </p>
+
+                    <ul class="space-y-4 pt-2">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-emeraldAccent/20 flex items-center justify-center text-emeraldAccent mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">Ухоженная парковая зона</h5>
+                                <p class="text-slate-400 text-xs">Тенистые аллеи, скверы и детские площадки для прогулок всей семьей.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-emeraldAccent/20 flex items-center justify-center text-emeraldAccent mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">Авиационные традиции</h5>
+                                <p class="text-slate-400 text-xs">Дом многих семей пилотов, бортпроводников и технических специалистов гражданской авиации.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-emeraldAccent/20 flex items-center justify-center text-emeraldAccent mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">Автономная инфраструктура</h5>
+                                <p class="text-slate-400 text-xs">Собственные магазины, аптеки, скверы и удобная планировка жилых кварталов.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Aviation Display Widget -->
+                <div class="lg:col-span-6">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl border border-skyBrand-500/30 relative">
+                        <div class="text-center mb-6">
+                            <span class="text-xs text-skyBrand-400 uppercase font-mono tracking-widest">Авиационная сводка района</span>
+                            <h3 class="text-xl font-bold text-white">Манас (UCFM / FRU)</h3>
+                        </div>
+
+                        <!-- Radar Graphic -->
+                        <div class="relative w-48 h-48 sm:w-60 sm:h-60 mx-auto mb-6 rounded-full border-2 border-skyBrand-500/40 flex items-center justify-center overflow-hidden bg-slate-950/80">
+                            <div class="absolute inset-0 rounded-full border border-skyBrand-500/20 m-6"></div>
+                            <div class="absolute inset-0 rounded-full border border-skyBrand-500/20 m-16"></div>
+                            <div class="absolute w-full h-[1px] bg-skyBrand-500/30"></div>
+                            <div class="absolute h-full w-[1px] bg-skyBrand-500/30"></div>
+                            
+                            <!-- Radar sweep line -->
+                            <div class="absolute top-0 left-0 right-0 bottom-0 origin-center radar-sweep">
+                                <div class="w-1/2 h-1/2 bg-gradient-to-br from-skyBrand-400/40 to-transparent"></div>
+                            </div>
+
+                            <!-- Target points -->
+                            <div class="absolute top-12 right-16 w-3 h-3 bg-emeraldAccent rounded-full pulse-dot" title="Воздушный коридор 1"></div>
+                            <div class="absolute bottom-16 left-12 w-2.5 h-2.5 bg-goldAccent rounded-full pulse-dot" title="Воздушный коридор 2"></div>
+                            
+                            <div class="relative z-10 text-center">
+                                <i class="fa-solid fa-tower-observation text-3xl text-skyBrand-400"></i>
+                                <p class="text-[10px] text-slate-300 font-mono mt-1">ВЛП 08/26</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 text-center">
+                            <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+                                <p class="text-xs text-slate-400">Длина ВПП</p>
+                                <p class="text-lg font-bold text-white">4,200 метров</p>
+                            </div>
+                            <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+                                <p class="text-xs text-slate-400">Категория ИКАО</p>
+                                <p class="text-lg font-bold text-emeraldAccent">CAT IIIA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure & Amenities Section -->
+    <section id="infrastructure" class="py-24 bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-emeraldAccent tracking-widest uppercase mb-2">УДОБСТВА И СЕРВИСЫ</h2>
+                <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Инфраструктура села и Авиагородка</h3>
+                <p class="mt-3 text-slate-400 text-sm sm:text-base">Все необходимое для комфортной жизни, обучения и развития семьи рядом с домом.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12" id="infra-tabs">
+                <button onclick="switchTab('tab-edu')" id="btn-tab-edu" class="infra-tab-btn active px-5 py-3 rounded-xl glass-card text-sm font-semibold text-white border border-skyBrand-500 bg-skyBrand-600/30 transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-2 text-skyBrand-400"></i>Образование
+                </button>
+                <button onclick="switchTab('tab-transport')" id="btn-tab-transport" class="infra-tab-btn px-5 py-3 rounded-xl glass-card text-sm font-semibold text-slate-300 hover:text-white border border-slate-800 transition-all">
+                    <i class="fa-solid fa-bus mr-2 text-emeraldAccent"></i>Транспорт
+                </button>
+                <button onclick="switchTab('tab-social')" id="btn-tab-social" class="infra-tab-btn px-5 py-3 rounded-xl glass-card text-sm font-semibold text-slate-300 hover:text-white border border-slate-800 transition-all">
+                    <i class="fa-solid fa-hospital-user mr-2 text-amber-400"></i>Медицина и Соцобъекты
+                </button>
+                <button onclick="switchTab('tab-shops')" id="btn-tab-shops" class="infra-tab-btn px-5 py-3 rounded-xl glass-card text-sm font-semibold text-slate-300 hover:text-white border border-slate-800 transition-all">
+                    <i class="fa-solid fa-cart-shopping mr-2 text-purple-400"></i>Торговля и Отдых
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="infra-tab-content">
+                
+                <!-- Education Tab -->
+                <div id="tab-edu" class="tab-pane grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-skyBrand-500/20 text-skyBrand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Средняя школа села Манас</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Современное общеобразовательное учреждение с сильным преподавательским составом и спортивной площадкой.
+                        </p>
+                        <span class="text-xs text-skyBrand-400 font-semibold">1-11 классы • Доп. кружки</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-emeraldAccent/20 text-emeraldAccent flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Детские сады</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Государственные и частные дошкольные учреждения, обеспечивающие гармоничное развитие детей.
+                        </p>
+                        <span class="text-xs text-emeraldAccent font-semibold">Подготовка к школе • Ясли</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Образовательные центры</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Курсы иностранных языков, компьютерной грамотности и творческие секции для молодежи.
+                        </p>
+                        <span class="text-xs text-amber-400 font-semibold">Английский • IT • Рисование</span>
+                    </div>
+                </div>
+
+                <!-- Transport Tab -->
+                <div id="tab-transport" class="tab-pane hidden grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-emeraldAccent/20 text-emeraldAccent flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Маршрутные такси №380</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Регулярное прямое сообщение с Бишкеком (Западный автовокзал, рынки). Интервал движения: каждые 10-15 минут.
+                        </p>
+                        <span class="text-xs text-emeraldAccent font-semibold">Маршрут: Манас ↔ Бишкек</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-skyBrand-500/20 text-skyBrand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-taxi"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Такси и Экспресс</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Круглосуточный сервис такси и онлайн-агрегаторы, обеспечивающие быструю поездку в любую точку Чуйской области.
+                        </p>
+                        <span class="text-xs text-skyBrand-400 font-semibold">24/7 Сервис</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-plane-up"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Аэропортовская Трасса</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Высококачественное освещенное четырехполосное шоссе со связью с объездной дорогой.
+                        </p>
+                        <span class="text-xs text-purple-400 font-semibold">Идеальное покрытие</span>
+                    </div>
+                </div>
+
+                <!-- Social Tab -->
+                <div id="tab-social" class="tab-pane hidden grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">ГСВ / Фельдшерский пункт</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Группа семейных врачей для оказания первичной медицинской помощи и проведения вакцинации.
+                        </p>
+                        <span class="text-xs text-amber-400 font-semibold">Первичная медико-санитарная помощь</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-skyBrand-500/20 text-skyBrand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Аптечные пункты</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Широкий ассортимент медикаментов и дежурные аптеки в шаговой доступности.
+                        </p>
+                        <span class="text-xs text-skyBrand-400 font-semibold">Доступно 24/7</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-emeraldAccent/20 text-emeraldAccent flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Почтовое отделение и Банкоматы</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Оплата коммунальных услуг, денежные переводы и банкоматы ведущих банков Кыргызстана.
+                        </p>
+                        <span class="text-xs text-emeraldAccent font-semibold">Кыргыз Почтасы • Элкарт/VISA</span>
+                    </div>
+                </div>
+
+                <!-- Shops Tab -->
+                <div id="tab-shops" class="tab-pane hidden grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Продуктовые супермаркеты</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Магазины формата "у дома", свежие продуктовые ряды, национальная выпечка и свежие фрукты.
+                        </p>
+                        <span class="text-xs text-purple-400 font-semibold">Ежедневно 08:00 - 23:00</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-emeraldAccent/20 text-emeraldAccent flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Кафе и Кафетерии</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Уютные заведения с национальной и европейской кухней, знаменитые чуйские лагманы и шашлыки.
+                        </p>
+                        <span class="text-xs text-emeraldAccent font-semibold">Вкусные блюда • Чайхана</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-skyBrand-500/20 text-skyBrand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-futbol"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Спортивные площадки</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Мини-футбольные поля с искусственным покрытием, воркаут-зоны для молодежи и взрослых.
+                        </p>
+                        <span class="text-xs text-skyBrand-400 font-semibold">Спорт & Активность</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map & Gallery Section -->
+    <section id="interactive" class="py-24 bg-slate-900/80 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-skyBrand-400 tracking-widest uppercase mb-2">ГИД И ФОТООБЗОР</h2>
+                <h3 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Карта ориентиров и Фотогалерея</h3>
+                <div class="w-20 h-1 bg-gradient-to-r from-skyBrand-500 to-goldAccent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start mb-16">
+                <!-- Custom Interactive Map Container -->
+                <div class="lg:col-span-7 glass-card p-6 rounded-3xl border border-slate-700/80 relative">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-map-marked-alt text-skyBrand-400"></i>
+                            Схема ключевых локаций
+                        </h4>
+                        <span class="text-xs text-slate-400">Нажмите на точку для деталей</span>
+                    </div>
+
+                    <!-- Visual Stylized Map Area -->
+                    <div class="relative w-full h-[360px] sm:h-[420px] rounded-2xl bg-slate-950 overflow-hidden border border-slate-800 flex items-center justify-center">
+                        <!-- Stylized Map Background Lines -->
+                        <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="100" x2="100%" y2="100" stroke="#0ea5e9" stroke-width="4" stroke-dasharray="8 4"/>
+                            <line x1="40%" y1="0" x2="40%" y2="100%" stroke="#334155" stroke-width="6"/>
+                            <circle cx="40%" cy="100" r="180" stroke="#1e293b" stroke-width="2" fill="none"/>
+                            <path d="M 10 300 Q 150 200 400 350 T 800 200" fill="none" stroke="#10b981" stroke-width="3" opacity="0.6"/>
+                        </svg>
+
+                        <!-- Interactive Map Markers -->
+                        <!-- Marker 1: Airport Road -->
+                        <div onclick="showMapInfo('Аэропортовская Трасса', 'Главная магистраль со светодиодным освещением, соединяющая столицу и аэропорт.', '43.051, 74.471')" class="absolute top-1/4 left-1/3 cursor-pointer group">
+                            <div class="w-8 h-8 rounded-full bg-skyBrand-500/80 border-2 border-white flex items-center justify-center text-white text-xs font-bold group-hover:scale-125 transition-transform shadow-lg shadow-skyBrand-500/50">
+                                <i class="fa-solid fa-road"></i>
+                            </div>
+                            <span class="absolute top-9 -left-6 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap hidden group-hover:block z-20">Трасса Бишкек-Манас</span>
+                        </div>
+
+                        <!-- Marker 2: Avia-Gorodok Square -->
+                        <div onclick="showMapInfo('Сквер Авиагородка', 'Зеленая зона отдыха жителей Авиагородка с детскими площадками и скамейками.', '43.058, 74.475')" class="absolute top-2/4 left-2/4 cursor-pointer group">
+                            <div class="w-8 h-8 rounded-full bg-emeraldAccent border-2 border-white flex items-center justify-center text-white text-xs font-bold group-hover:scale-125 transition-transform shadow-lg shadow-emeraldAccent/50">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+                            <span class="absolute top-9 -left-8 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap hidden group-hover:block z-20">Парк Авиагородка</span>
+                        </div>
+
+                        <!-- Marker 3: Airport Terminal -->
+                        <div onclick="showMapInfo('Аэропорт Манас', 'Международный аэровокзальный комплекс, расположенный в непосредственной близости.', '43.061, 74.477')" class="absolute top-1/6 right-1/4 cursor-pointer group">
+                            <div class="w-8 h-8 rounded-full bg-amber-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold group-hover:scale-125 transition-transform shadow-lg shadow-amber-500/50">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                            <span class="absolute top-9 -left-8 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap hidden group-hover:block z-20">Терминал Аэропорта</span>
+                        </div>
+
+                        <!-- Marker 4: Central Mosque -->
+                        <div onclick="showMapInfo('Центральная Мечеть', 'Духовный центр села Манас с ухоженной территорией.', '43.048, 74.468')" class="absolute bottom-1/4 left-1/4 cursor-pointer group">
+                            <div class="w-8 h-8 rounded-full bg-purple-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold group-hover:scale-125 transition-transform shadow-lg shadow-purple-500/50">
+                                <i class="fa-solid fa-mosque"></i>
+                            </div>
+                            <span class="absolute top-9 -left-8 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap hidden group-hover:block z-20">Мечеть Манас</span>
+                        </div>
+
+                        <!-- Map Overlay Label -->
+                        <div class="absolute bottom-4 right-4 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] text-slate-300">
+                            Сокулукский район • село Манас
+                        </div>
+                    </div>
+
+                    <!-- Map Info Box -->
+                    <div id="map-info-box" class="mt-4 p-4 bg-slate-950/80 rounded-xl border border-slate-800">
+                        <h5 class="text-sm font-bold text-skyBrand-400" id="map-point-title">Выберите точку на карте выше</h5>
+                        <p class="text-xs text-slate-300 mt-1" id="map-point-desc">Кликните по иконкам дороги, парка, аэропорта или мечети для просмотра информации о месте.</p>
+                        <p class="text-[10px] font-mono text-slate-500 mt-2" id="map-point-coords">Координаты: N/A</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Section Container -->
+                <div class="lg:col-span-5 space-y-4">
+                    <h4 class="text-lg font-bold text-white flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-images text-emeraldAccent"></i>
+                        Живописные кадры
+                    </h4>
+
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div onclick="openModal('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80', 'Улицы села Манас и чистый загородный воздух')" class="cursor-pointer overflow-hidden rounded-2xl group relative h-40">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Манас село" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute bottom-2 left-3 text-xs font-semibold text-white">Село Манас</span>
+                        </div>
+
+                        <div onclick="openModal('https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1200&q=80', 'Чуйская долина и вид на снежные пики Ала-Тоо')" class="cursor-pointer overflow-hidden rounded-2xl group relative h-40">
+                            <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80" alt="Чуйская долина" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute bottom-2 left-3 text-xs font-semibold text-white">Вид на горы</span>
+                        </div>
+
+                        <div onclick="openModal('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80', 'Взлетная полоса и авиационное наследие Авиагородка')" class="cursor-pointer overflow-hidden rounded-2xl group relative h-40">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Авиагородок" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute bottom-2 left-3 text-xs font-semibold text-white">Авиагородок</span>
+                        </div>
+
+                        <div onclick="openModal('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80', 'Закаты в Чуйской области около аэропорта Манас')" class="cursor-pointer overflow-hidden rounded-2xl group relative h-40">
+                            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=80" alt="Закат в Манасе" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute bottom-2 left-3 text-xs font-semibold text-white">Вечерний Манас</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Data Section (Weather & Flight Monitor) -->
+    <section id="live-data" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Weather Big Card -->
+                    <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-slate-800 pb-8 lg:pb-0 lg:pr-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-skyBrand-400 uppercase tracking-wider">Метеостанция Чуй / Манас</span>
+                            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded">Обновлено 5 мин назад</span>
+                        </div>
+
+                        <div class="flex items-center gap-6 my-4">
+                            <div class="text-5xl sm:text-6xl font-extrabold text-white font-display">+22°C</div>
+                            <div>
+                                <i class="fa-solid fa-cloud-sun text-amber-400 text-4xl mb-1"></i>
+                                <p class="text-sm font-semibold text-slate-200">Малооблачно</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800/80">
+                            <div class="text-xs">
+                                <span class="text-slate-400 block">Влажность</span>
+                                <span class="text-slate-200 font-semibold">42%</span>
+                            </div>
+                            <div class="text-xs">
+                                <span class="text-slate-400 block">Давление</span>
+                                <span class="text-slate-200 font-semibold">725 мм рт. ст.</span>
+                            </div>
+                            <div class="text-xs">
+                                <span class="text-slate-400 block">Видимость</span>
+                                <span class="text-emeraldAccent font-semibold">10 км (Отличная)</span>
+                            </div>
+                            <div class="text-xs">
+                                <span class="text-slate-400 block">Ветер</span>
+                                <span class="text-slate-200 font-semibold">3.2 м/с СЗ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Radar Mini Board -->
+                    <div class="lg:col-span-7">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-base font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-plane-arrival text-skyBrand-400"></i>
+                                Онлайн-табло аэропорта «Манас» (Ближайшие рейсы)
+                            </h4>
+                            <span class="text-xs text-emeraldAccent font-mono animate-pulse">• LIVE</span>
+                        </div>
+
+                        <div class="space-y-3 overflow-x-auto">
+                            <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between text-xs min-w-[300px]">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono text-skyBrand-400 font-bold">SU-1882</span>
+                                    <span class="text-white font-medium">Москва (Шереметьево)</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-400">15:10</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">Приземлился</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between text-xs min-w-[300px]">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono text-skyBrand-400 font-bold">FZ-1419</span>
+                                    <span class="text-white font-medium">Дубай (DXB)</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-400">16:25</span>
+                                    <span class="px-2 py-0.5 rounded bg-skyBrand-500/20 text-skyBrand-400 font-semibold">В пути</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between text-xs min-w-[300px]">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono text-skyBrand-400 font-bold">K9-105</span>
+                                    <span class="text-white font-medium">Ош (OSS)</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-400">17:00</span>
+                                    <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-semibold">Посадка</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Local News Section -->
+    <section id="community" class="py-24 bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-bold text-skyBrand-400 tracking-widest uppercase mb-2">СООБЩЕСТВО И СОБЫТИЯ</h2>
+                    <h3 class="font-display text-3xl font-extrabold text-white">Новости и объявления</h3>
+                </div>
+                <p class="text-slate-400 text-sm mt-2 md:mt-0">Официальные сообщения и события села Манас</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <article class="glass-card rounded-2xl overflow-hidden glass-card-hover flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-skyBrand-400 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>15 Сентября, 2026</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3 hover:text-skyBrand-400 transition-colors">
+                            Озеленение парковой зоны Авиагородка
+                        </h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Жители совместно с местными активистами высадили более 100 новых саженцев тянь-шаньской ели и клёнов в центральном сквере.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-800/60">
+                        <span class="text-xs font-semibold text-emeraldAccent">Благоустройство</span>
+                    </div>
+                </article>
+
+                <!-- News 2 -->
+                <article class="glass-card rounded-2xl overflow-hidden glass-card-hover flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-skyBrand-400 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>02 Сентября, 2026</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3 hover:text-skyBrand-400 transition-colors">
+                            Завершение ремонта центральной дороги
+                        </h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Обновлено дорожное покрытие и установлены новые энергосберегающие светильники вдоль подъезда к Авиагородку.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-800/60">
+                        <span class="text-xs font-semibold text-skyBrand-400">Инфраструктура</span>
+                    </div>
+                </article>
+
+                <!-- News 3 -->
+                <article class="glass-card rounded-2xl overflow-hidden glass-card-hover flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-skyBrand-400 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>28 Августа, 2026</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3 hover:text-skyBrand-400 transition-colors">
+                            Детский турнир по футболу Чуйской области
+                        </h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Команда школьников из села Манас заняла призовое место на районных соревнованиях в Сокулуке.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-800/60">
+                        <span class="text-xs font-semibold text-amber-400">Спорт и Молодёжь</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Contact Section -->
+    <section id="contact" class="py-24 bg-darkBg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- FAQ Accordion Left -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold text-skyBrand-400 tracking-widest uppercase mb-2">ВОПРОСЫ И ОТВЕТЫ</h2>
+                        <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-white">Часто задаваемые вопросы</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="glass-card rounded-xl p-4 border border-slate-800">
+                            <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left font-semibold text-white text-sm sm:text-base focus:outline-none">
+                                <span>Как добраться из Бишкека в село Манас и Авиагородок?</span>
+                                <i class="fa-solid fa-chevron-down text-skyBrand-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
+                                Вы можете доехать на маршрутном такси №380, курсирующем от Западного автовокзала Бишкека, либо на машине по автотрассе Бишкек — Аэропорт Манас (время в пути ~25-30 минут).
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="glass-card rounded-xl p-4 border border-slate-800">
+                            <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left font-semibold text-white text-sm sm:text-base focus:outline-none">
+                                <span>Мешает ли шум самолетов жителям Авиагородка?</span>
+                                <i class="fa-solid fa-chevron-down text-skyBrand-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
+                                Взлетно-посадочные полосы аэропорта расположен с учетом розы ветров и шумовых норм. Кварталы Авиагородка и села защищены зелеными насаждениями, поэтому уровень шума комфортен для проживания.
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="glass-card rounded-xl p-4 border border-slate-800">
+                            <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left font-semibold text-white text-sm sm:text-base focus:outline-none">
+                                <span>Каковы перспективы развития района?</span>
+                                <i class="fa-solid fa-chevron-down text-skyBrand-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
+                                Село Манас и Авиагородок являются ключом логистического кластера Чуйской области. Планируется дальнейшее развитие сервисной инфраструктуры, расширение зеленых зон и социальных объектов.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact / Suggestion Form Right -->
+                <div class="lg:col-span-6">
+                    <div class="glass-card p-8 rounded-3xl border border-slate-700/80">
+                        <h3 class="text-xl font-bold text-white mb-2">Обращение или предложение</h3>
+                        <p class="text-xs text-slate-400 mb-6">Оставьте сообщение для общественного совета села Манас и Авиагородка.</p>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Ваше Имя</label>
+                                <input type="text" required placeholder="Например: Асан" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-skyBrand-400">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Телефон или Email</label>
+                                <input type="text" required placeholder="+996 (___) __-__-__" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-skyBrand-400">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Тема обращения</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-skyBrand-400">
+                                    <option>Вопрос по благоустройству</option>
+                                    <option>Предложение по Авиагородку</option>
+                                    <option>Вопрос по транспорту</option>
+                                    <option>Другое</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Сообщение</label>
+                                <textarea rows="3" required placeholder="Опишите ваше предложение или вопрос..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-skyBrand-400"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-skyBrand-600 to-emeraldAccent text-white font-bold text-sm shadow-lg shadow-skyBrand-600/30 hover:scale-[1.02] transition-all">
+                                <i class="fa-solid fa-paper-plane mr-2"></i>Отправить сообщение
+                            </button>
+                        </form>
+
+                        <!-- Form status message -->
+                        <div id="form-status" class="hidden mt-4 p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center">
+                            Спасибо! Ваше обращение принято и будет рассмотрено.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-skyBrand-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-plane-departure text-sm"></i>
+                        </div>
+                        <span class="font-display font-bold text-white text-base">СЕЛО МАНАС</span>
+                    </div>
+                    <p class="leading-relaxed text-slate-400">
+                        Информационный портал села Манас и Авиагородка, Чуйская область, Кыргызстан.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-3">Экстренные службы</h5>
+                    <ul class="space-y-2">
+                        <li>Единая служба спасения: <span class="text-white font-mono">112</span></li>
+                        <li>Скорая помощь: <span class="text-white font-mono">103</span></li>
+                        <li>Милиция: <span class="text-white font-mono">102</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-3">Локация</h5>
+                    <p class="leading-relaxed">
+                        Кыргызская Республика,<br>
+                        Чуйская область, Сокулукский район,<br>
+                        село Манас / Авиагородок
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-3">Навигация</h5>
+                    <ul class="space-y-1.5">
+                        <li><a href="#about" class="hover:text-skyBrand-400 transition-colors">О селе</a></li>
+                        <li><a href="#avia" class="hover:text-skyBrand-400 transition-colors">Авиагородок</a></li>
+                        <li><a href="#infrastructure" class="hover:text-skyBrand-400 transition-colors">Инфраструктура</a></li>
+                        <li><a href="#interactive" class="hover:text-skyBrand-400 transition-colors">Карта</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+                <p>© 2026 Село Манас & Авиагородок. Все права защищены.</p>
+                <div class="flex items-center gap-4 text-slate-400">
+                    <a href="#" class="hover:text-skyBrand-400"><i class="fa-brands fa-telegram text-base"></i></a>
+                    <a href="#" class="hover:text-skyBrand-400"><i class="fa-brands fa-whatsapp text-base"></i></a>
+                    <a href="#" class="hover:text-skyBrand-400"><i class="fa-brands fa-instagram text-base"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Photo Modal -->
+    <div id="photo-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-4xl w-full glass-card p-4 rounded-3xl" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-slate-800 text-white border border-slate-700 flex items-center justify-center text-lg hover:bg-red-500 transition-colors z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img" src="" alt="Full view" class="w-full h-auto max-h-[75vh] object-cover rounded-2xl">
+            <p id="modal-caption" class="text-center text-sm font-medium text-slate-200 mt-4 px-2"></p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Drawer Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Counter Animation for Stats
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 50;
+
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count).toLocaleString();
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const heroSection = document.querySelector('.counter');
+            if (heroSection) {
+                const pos = heroSection.getBoundingClientRect().top;
+                if (pos < window.innerHeight && !animated) {
+                    animated = true;
+                    animateCounters();
+                }
+            }
+        });
+
+        // Trigger animation immediately if in view on load
+        window.addEventListener('load', () => {
+            animateCounters();
+            animated = true;
+        });
+
+        // Tab Switching for Infrastructure
+        function switchTab(tabId) {
+            // Hide all tab panes
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.add('hidden');
+            });
+            // Show selected tab
+            const targetPane = document.getElementById(tabId);
+            if (targetPane) {
+                targetPane.classList.remove('hidden');
+            }
+
+            // Update tab button styles
+            document.querySelectorAll('.infra-tab-btn').forEach(btn => {
+                btn.classList.remove('border-skyBrand-500', 'bg-skyBrand-600/30', 'text-white');
+                btn.classList.add('border-slate-800', 'text-slate-300');
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-slate-800', 'text-slate-300');
+                activeBtn.classList.add('border-skyBrand-500', 'bg-skyBrand-600/30', 'text-white');
+            }
+        }
+
+        // Interactive Map Marker Handler
+        function showMapInfo(title, description, coords) {
+            document.getElementById('map-point-title').innerText = title;
+            document.getElementById('map-point-desc').innerText = description;
+            document.getElementById('map-point-coords').innerText = 'Координаты: ' + coords;
+        }
+
+        // Accordion FAQ Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Photo Modal Logic
+        function openModal(imgSrc, caption) {
+            const modal = document.getElementById('photo-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalCap = document.getElementById('modal-caption');
+
+            modalImg.src = imgSrc;
+            modalCap.innerText = caption;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('photo-modal').classList.add('hidden');
+        }
+
+        // Form Submit Mock
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const statusBox = document.getElementById('form-status');
+            statusBox.classList.remove('hidden');
+            event.target.reset();
+
+            setTimeout(() => {
+                statusBox.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
